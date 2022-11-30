@@ -1,0 +1,12 @@
+SetEnvIf Authorization .+ HTTP_AUTHORIZATION=$0
+
+Options -Indexes
+
+RewriteEngine On    # Turn on the rewriting engine
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+# users Control
+RewriteRule    ^readtasks$      src/api/read.php      [L]    # Handle apis requests
+RewriteRule    ^addtasks$      src/api/create.php      [L]
+RewriteRule    ^deletetasks$      src/api/delete.php      [L]

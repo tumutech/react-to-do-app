@@ -28,5 +28,15 @@ html {
 body {
   width: 40em;
   margin: 1em auto;
+  height: 100%;
+}
+.container{
+  margin: 5px;
+  height: 100%;
+  background-color: bisque;
+}
+.inputbar{
+  margin: 10px;
+
 }
 

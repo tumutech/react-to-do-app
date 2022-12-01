@@ -14,10 +14,11 @@
     $item = new Tasks($db);
     
     $data = json_decode(file_get_contents("php://input"));
-    
+    echo($data);
     $item->id = $data->id;
     
-    if($item->deleteTask()){
+    if($item->deleteTask($data->id)){
+
         echo json_encode("Task deleted.");
     } else{
         echo json_encode("Data could not be deleted");

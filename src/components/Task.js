@@ -1,7 +1,6 @@
 import React from 'react';
 import axios from 'axios';
 import { Alert } from 'react-bootstrap';
-
 export default class Task extends React.Component {
   state = {
     mytask: []
@@ -38,7 +37,8 @@ export default class Task extends React.Component {
 
   render() {
     return (
-      <div className='Container'>
+      <div className='container'>
+        <div className='inputbar'>
       <form onSubmit={this.handleSubmit}>
           <label>
             New Task:
@@ -46,7 +46,7 @@ export default class Task extends React.Component {
           </label>
           <button type="submit">Add</button>
         </form>
-        
+        </div> 
       <ul>
         {
           this.state.mytask
@@ -54,7 +54,7 @@ export default class Task extends React.Component {
             <>
 
               {/* <li key={taskitem.id}>{taskitem.name} <button id='delbutton'>Delete</button></li>  */}
-              <Alert key={taskitem.id} variant="success">{taskitem.name}</Alert>
+              <Alert key={taskitem.id} variant="success">{taskitem.name} <button>Delete</button></Alert>
             </>
             )
         }

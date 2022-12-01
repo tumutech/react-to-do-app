@@ -88,7 +88,7 @@
             return false;
         }
         // Deleting a single task from the database
-        function deleteTask(){
+        function deleteTask($id){
             $sqlQuery = "DELETE FROM " . $this->db_table . " WHERE id = ?";
             $stmt = $this->conn->prepare($sqlQuery);
         

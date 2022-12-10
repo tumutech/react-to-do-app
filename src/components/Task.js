@@ -17,7 +17,7 @@ export default class Task extends React.Component {
     };
     console.log(task);
 
-    axios.post(`http://localhost/todoproject/addtasks`,  task , {headers:{'content-type': 'text/json'}})
+    axios.post(`http://localhost/react-to-do-app/addtasks`,  task , {headers:{'content-type': 'text/json'}})
       .then(res => {
         console.log(res);
         console.log(res.data);
@@ -27,7 +27,7 @@ export default class Task extends React.Component {
   }
   //getting tasks from the database through the api
   componentDidMount() {
-    axios.get(`http://localhost/todoproject/readtasks`,{headers:{'content-type': 'text/json'}})
+    axios.get(`http://localhost/react-to-do-app/readtasks`,{headers:{'content-type': 'text/json'}})
       .then(res => {
         const mytask = res.data;
         console.log(mytask);
